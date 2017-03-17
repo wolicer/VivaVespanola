@@ -1,0 +1,788 @@
+﻿
+/* Jquery UI CSS */
+
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}
+
+.ui-draggable .ui-dialog-titlebar {
+    cursor: default;
+}
+
+/* GED CSS */
+
+span#ged-style-version:after {
+  content: "1.7";
+}
+
+div.ged-body {
+    margin: 0px auto;
+    min-width: 1000px;
+    width: auto;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+div.ged-body hr {
+    margin: 30px 0px;
+}
+
+div.ged-title-menu-item {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 2.4em;
+    padding: 8px 6px;
+    margin: 0px 6px 0px 6px;
+    height: 40px;
+}
+
+a.ged-title-menu-item-link {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.ged-title-menu-item-link-selected {
+    cursor: default !important;
+}
+
+#ged-message {
+    position: fixed;
+    font-size: 0.9em;
+    z-index: 20;
+    width: auto;
+    top: 4px;
+    left: 4px;
+}
+
+#ged-message a {
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#ged-signature {
+    position: fixed;
+    font-size: 0.9em;
+    bottom: 4px;
+    right: 4px;
+    width: 90px;
+    height: 20px;
+    z-index: 1;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    line-height: 20px;
+}
+
+#ged-signature a {
+    text-decoration: none;
+    cursor: default;
+}
+
+#ged-signature a:hover {
+    font-weight: bold;
+}
+
+.ged-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0px 1px;
+}
+
+.ged-icon-div {
+    display: inline-block;
+    vertical-align:text-bottom;
+}
+
+.ged-iconbutton {
+    width: 148px;
+    height: 40px;
+    font-size: 0.8em;
+}
+
+.ged-content-raider-tooltip, .ged-content-collector-tooltip, .ged-content-trader-tooltipItem, .ged-content-trader-tooltipShop, .ged-content-trader-tooltipProj, .ged-content-surveyor-tooltip, .ged-content-reminder-tooltip {
+    display: inline-block;
+}
+
+.ged-content-raider-body-dialog-info, .ged-content-collector-body-dialog-info, .ged-content-trader-body-dialog-info, .ged-content-surveyor-body-dialog-info, .ged-content-reminder-body-dialog-info {
+    font-size: 0.8em;
+    white-space: pre-line;
+}
+
+.ged-content-raider-body-dialog-resetConfirmation, .ged-content-collector-body-dialog-resetConfirmation, .ged-content-trader-body-dialog-resetConfirmationItem, .ged-content-surveyor-body-dialog-resetConfirmationItem, .ged-content-trader-body-dialog-resetConfirmationProj, .ged-content-reminder-body-dialog-resetConfirmation {
+    font-size: 0.8em;
+}
+
+.ged-content-raider-body-progressbar, .ged-content-collector-body-progressbar, .ged-content-surveyor-body-progressbar {
+    margin: 10px;
+    position: relative;
+}
+
+.ged-content-raider-body-progressbar-label, .ged-content-collector-body-progressbar-label, .ged-content-surveyor-body-progressbar-label {
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    text-align:center;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* GED General */
+
+.ged-content-general {
+    margin: 0px 20px;
+}
+
+/* GED Raider */
+
+.ged-content-raider-body {
+    margin: 6px;
+    padding: 10px;
+}
+
+.ged-content-raider-body-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 0px;
+    width: 180px;
+}
+
+.ged-content-raider-body-control {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px 0px 10px 0px;
+    width: 460px;
+    text-align:right;
+    float: right;
+}
+
+table#ged-content-raider-body-table {
+    width:100%;
+    border: 1px solid black;
+    border-spacing: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+table#ged-content-raider-body-table th {
+    border-bottom: 1px solid black;
+    padding: 1px 9px;
+    height: 46px;
+}
+
+table#ged-content-raider-body-table tr.ged-content-raider-body-table-row td {
+    padding: 1px 9px;
+    height: 46px;
+}
+
+.ged-content-raider-body-dialog-addEditRaid {
+    display: inline-block;
+}
+
+#dialog-addEditRaid-name {
+    width: 610px;
+}
+
+#dialog-addEditRaid-repeatCount, #dialog-addEditRaid-repeatTarget {
+    width: 40px;
+}
+
+#dialog-addEditRaid-week {
+    display: inline-block;
+}
+
+.dialog-addEditRaid-time {
+    text-align:center;
+    width: 90px;
+}
+
+#dialog-addEditRaid-cooldownDuration {
+    width: 40px;
+}
+
+.dialog-addEditRaid-duration {
+    text-align:center;
+    width: 120px;
+}
+
+#dialog-addEditRaid-note {
+    resize: none;
+    width: 514px;
+    height: 100px;
+}
+
+.dialog-addEditRaid-noteLabel {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* GED Collector */
+
+.ged-content-collector-body {
+    margin: 6px;
+    padding: 10px;
+}
+
+.ged-content-collector-body-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 0px;
+    width: 180px;
+}
+
+.ged-content-collector-body-control {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px 0px 10px 0px;
+    width: 460px;
+    text-align:right;
+    float: right;
+}
+
+table#ged-content-collector-body-table {
+    width:100%;
+    border: 1px solid black;
+    border-spacing: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+table#ged-content-collector-body-table th {
+    border-bottom: 1px solid black;
+    padding: 1px 9px;
+    height: 46px;
+}
+
+table#ged-content-collector-body-table tr.ged-content-collector-body-table-row td {
+    padding: 1px 9px;
+    height: 70px;
+}
+
+.ged-checkbox-recruitLabel {
+    width: 290px;
+}
+
+#dialog-addEditChar-name {
+    width: 400px;
+}
+
+#dialog-addEditChar-icon {
+    width: 400px;
+}
+
+.dialog-addEditChar-label {
+    display: inline-block;
+    width: 56px;
+    text-align: right;
+}
+
+#dialog-addEditChar-note {
+    resize: none;
+    width: 314px;
+    height: 100px;
+}
+
+.dialog-addEditChar-noteLabel {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* GED Trader */
+
+.ged-content-trader-body {
+    margin: 6px;
+    padding: 10px;
+}
+
+.ged-content-trader-body-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 0px;
+    width: 180px;
+}
+
+.ged-content-trader-body-control-item {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px 0px 10px 0px;
+    width: 460px;
+    text-align:right;
+    float: right;
+}
+
+.ged-content-trader-body-control-shop {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px 0px 10px 0px;
+    width: 460px;
+    text-align:right;
+    float: right;
+}
+
+.ged-content-trader-body-control-proj {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px 0px 10px 0px;
+    width: 460px;
+    text-align:right;
+    float: right;
+}
+
+table#ged-content-trader-body-table-item {
+    width:100%;
+    border: 1px solid black;
+    border-spacing: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+table#ged-content-trader-body-table-item th {
+    border-bottom: 1px solid black;
+    padding: 1px 9px;
+    height: 46px;
+}
+
+table#ged-content-trader-body-table-item tr.ged-content-trader-body-table-row-item td {
+    padding: 1px 9px;
+    height: 46px;
+}
+
+table#ged-content-trader-body-table-shop {
+    width:100%;
+    border: 1px solid black;
+    border-spacing: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+table#ged-content-trader-body-table-shop th {
+    border-bottom: 1px solid black;
+    padding: 1px 9px;
+    height: 46px;
+}
+
+table#ged-content-trader-body-table-shop tr.ged-content-trader-body-table-row-shop td {
+    padding: 1px 9px;
+    height: 46px;
+}
+
+table#ged-content-trader-body-table-proj {
+    width:100%;
+    border: 1px solid black;
+    border-spacing: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+table#ged-content-trader-body-table-proj th {
+    border-bottom: 1px solid black;
+    padding: 1px 9px;
+    height: 46px;
+}
+
+table#ged-content-trader-body-table-proj tr.ged-content-trader-body-table-row-proj td {
+    padding: 1px 9px;
+    height: 46px;
+}
+
+#dialog-addEditItem-name {
+    width: 400px;
+}
+
+#dialog-addEditItem-price {
+    width: 130px;
+}
+
+#dialog-addEditItem-price-display, #dialog-addEditItem-price-display-currency {
+    font-weight: bold;
+}
+
+.dialog-addEditItem-label {
+    display: inline-block;
+    width: 56px;
+    text-align: right;
+}
+
+#dialog-addEditItem-note {
+    resize: none;
+    width: 314px;
+    height: 100px;
+}
+
+.dialog-addEditItem-noteLabel {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#dialog-addEditShop-name {
+    width: 300px;
+}
+
+#dialog-addEditShop-name-button {
+    vertical-align: middle;
+}
+
+.dialog-addEditShop-name-overflow {
+    height: 180px;
+}
+
+#dialog-addEditShop-quantity {
+    width: 70px;
+}
+
+.dialog-addEditShop-label {
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+}
+
+#dialog-addEditShop-note {
+    resize: none;
+    width: 314px;
+    height: 100px;
+}
+
+.dialog-addEditShop-noteLabel {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#dialog-addEditProj-name {
+    width: 400px;
+}
+
+#dialog-addEditProj-color {
+    width: 120px;
+}
+
+.dialog-addEditProj-label {
+    display: inline-block;
+    width: 56px;
+    text-align: right;
+}
+
+#dialog-addEditProj-note {
+    resize: none;
+    width: 314px;
+    height: 100px;
+}
+
+.dialog-addEditProj-noteLabel {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* GED Surveyor */
+
+.ged-content-surveyor-body {
+    margin: 6px;
+    padding: 10px;
+}
+
+.ged-content-surveyor-body-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 0px;
+    width: 180px;
+}
+
+.ged-content-surveyor-body-control {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px 0px 10px 0px;
+    width: 460px;
+    text-align:right;
+    float: right;
+}
+
+div#ged-content-surveyor-holder {
+    width:100%;
+    clear: both;
+}
+
+fieldset.ged-surveyor-barracks {
+    display: inline-block;
+    margin: 2px 0;
+    clear: both;
+    border-radius: 8px;
+    width: 48%;
+    vertical-align: top;
+}
+
+fieldset.ged-surveyor-barracks legend {
+    font-weight: bold;
+    color: #5E5E5E;
+}
+
+div.ged-surveyor-member {
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin: 2px 1px;
+    padding: 6px 3px;
+    width: 31%;
+    border-radius: 8px;
+    -moz-user-select: -moz-none;
+    user-select: none;
+    cursor: default;
+}
+
+.member-placeholder {
+    display: inline-block;
+    border: 2px dashed #ddd;
+    margin: 0px;
+    padding: 6px 3px;
+    width: 31%;
+    height: 40px;
+    border-radius: 8px;
+}
+
+div.ged-content-surveyor-detail {
+    display: flex;
+    margin: auto 0;
+    white-space: nowrap;
+}
+
+div.ged-content-surveyor-membe-image {
+    display: inline;
+    margin:auto 3px auto;
+    white-space: nowrap;
+}
+
+div.ged-content-surveyor-member-name {
+    display: inline;
+    margin: auto 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    min-width: 0;
+    font-size: 9px;
+    flex-grow: 100;
+}
+
+div.ged-content-surveyor-member-level {
+    display: inline;
+    margin: auto 3px;
+    white-space: nowrap;
+    font-size: 9px;
+}
+
+div.ged-content-surveyor-control-container {
+    display: block;
+    margin: 3px 0 0;
+    text-align: center;
+}
+
+div.ged-content-surveyor-control {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+div.ged-content-surveyor-control button.ged-icon {
+    width: 30px;
+    height: 20px;
+}
+
+.ged-content-surveyor-body-dialog-addEditMemb {
+    display: inline-block;
+}
+
+#dialog-addEditMemb-type {
+    width: 240px;
+}
+
+#dialog-addEditMemb-type-button {
+    vertical-align: middle;
+}
+
+.dialog-addEditMemb-type-overflow {
+    height: 180px;
+}
+
+#dialog-addEditMemb-level {
+    width: 90px;
+}
+
+.dialog-addEditMemb-label {
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+}
+
+#dialog-addEditMemb-note {
+    resize: none;
+    width: 314px;
+    height: 100px;
+}
+
+.dialog-addEditMemb-noteLabel {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* GED Reminder */
+
+.ged-content-reminder-body {
+    margin: 6px;
+    padding: 10px;
+}
+
+.ged-content-reminder-body-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 0px;
+    width: 180px;
+}
+
+.ged-content-reminder-body-control {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px 0px 10px 0px;
+    width: 460px;
+    text-align:right;
+    float: right;
+}
+
+table#ged-content-reminder-body-table {
+    width:100%;
+    border: 1px solid black;
+    border-spacing: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+table#ged-content-reminder-body-table th {
+    border-bottom: 1px solid black;
+    padding: 1px 9px;
+    height: 46px;
+}
+
+table#ged-content-reminder-body-table tr.ged-content-reminder-body-table-row td {
+    padding: 1px 9px;
+    height: 46px;
+}
+
+#dialog-addEditAlrm-name {
+    width: 610px;
+}
+
+#dialog-addEditAlrm-week {
+    display: inline-block;
+}
+
+.dialog-addEditAlrm-time {
+    text-align:center;
+    width: 90px;
+}
+
+#dialog-addEditAlrm-note {
+    resize: none;
+    width: 514px;
+    height: 100px;
+}
+
+.dialog-addEditAlrm-noteLabel {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* GED Memoir */
+
+.ged-content-memoir-body {
+    margin: 6px;
+    padding: 10px;
+}
+
+#ged-content-memoir-text {
+    width: 100%;
+    min-height: 600px;
+    resize: vertical;
+    font: 14px Verdana,Geneva,sans-serif;
+}
+
+.ged-content-memoir-body-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 0px;
+    width: 180px;
+}
+
+.ged-content-memoir-body-control {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0px 0px 10px 0px;
+    width: 460px;
+    text-align:right;
+    float: right;
+}
+
+/* GED Creator */
+
+div.ged-content-creator-body {
+    margin: 6px;
+    padding: 10px;
+}
+
+table#ged-content-creator-body-table-version {
+    border: 1px solid black;
+    border-spacing: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+table#ged-content-creator-body-table-version th {
+    border-bottom: 1px solid black;
+    border-spacing: 0;
+    padding: 5px;
+}
+
+table#ged-content-creator-body-table-version td {
+    padding: 5px;
+}
+
+table#ged-content-creator-body-table-file {
+    border: 1px solid black;
+    border-spacing: 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+table#ged-content-creator-body-table-file th {
+    border-bottom: 1px solid black;
+    border-spacing: 0;
+    padding: 5px 10px;
+}
+
+table#ged-content-creator-body-table-file td {
+    padding: 5px;
+}
+
+table#ged-content-creator-body-table-file tr td:nth-child(3){
+    text-align: center;
+}
+    
+table#ged-content-creator-body-table-file tr td:nth-child(4){
+    text-align: center;
+}
+
+/* GED Utility */
+
+.ui-button {
+    cursor: default !important;
+}
+
+.ui-tooltip-content {
+    white-space: pre-wrap;
+}

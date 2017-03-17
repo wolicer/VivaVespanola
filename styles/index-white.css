@@ -1,0 +1,47 @@
+﻿
+/* GED CSS */
+
+.ged-body {
+    background-color: #fff;
+}
+
+a.ged-title-menu-item-link {
+    color: #28B;
+}
+
+a.ged-title-menu-item-link:hover {
+    color: #3AF;
+}
+
+.ged-title-menu-item-link-selected {
+    color: #000 !important;
+}
+
+#ged-message a {
+    color: #28B;
+}
+
+#ged-message a:hover {
+    color: #3AF;
+}
+
+#ged-signature {
+    background-color: #000;
+}
+
+#ged-signature a {
+    color: #fff;
+}
+
+.ged-table-head {
+    background-color:#000;
+    color: #fff;
+}
+
+div.ged-content tbody tr {
+    background-color: #fff;
+}
+
+div.ged-content tbody tr:hover {
+    background-color: #eee;
+}

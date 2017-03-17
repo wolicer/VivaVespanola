@@ -1,0 +1,47 @@
+﻿
+/* GED CSS */
+
+.ged-body {
+    background-color: #999999;
+}
+
+a.ged-title-menu-item-link {
+    color: #5b5b5b;
+}
+
+a.ged-title-menu-item-link:hover {
+    color: #d5d5d5;
+}
+
+.ged-title-menu-item-link-selected {
+    color: #7e7e7e !important;
+}
+
+#ged-message a {
+    color: #5b5b5b;
+}
+
+#ged-message a:hover {
+    color: #d5d5d5;
+}
+
+#ged-signature {
+    background-color: #000000;
+}
+
+#ged-signature a {
+    color: #ffffff;
+}
+
+.ged-table-head {
+    background-color:#555555;
+    color: #ffffff;
+}
+
+div.ged-content tbody tr {
+    background-color: #bfbfbf;
+}
+
+div.ged-content tbody tr:hover {
+    background-color: #d5d5d5;
+}
