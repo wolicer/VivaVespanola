@@ -24,14 +24,14 @@
         var globalOption;
         var alarmInProgress;
         var messageInProgress;
-        var scriptVersion = "1.7";
+        var scriptVersion = "1.9";
         var alarmAudio = document.getElementById('ged-content-reminder-body-alarm');
         //var gedColorLinks = [white,gray,blue,green,red]
-        var gedColorLinks = ['https://rawgit.com/wolicer/VivaVespanola/master/styles/index-white.css',
-                                'https://rawgit.com/wolicer/VivaVespanola/master/styles/index-gray.css',
-                                'https://rawgit.com/wolicer/VivaVespanola/master/styles/index-blue.css',
-                                'https://rawgit.com/wolicer/VivaVespanola/master/styles/index-green.css',
-                                'https://raw.githubusercontent.com/wolicer/VivaVespanola/master/styles/index-red.css'];
+        var gedColorLinks = ['https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-white.css',
+                                'https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-gray.css',
+                                'https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-blue.css',
+                                'https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-green.css',
+                                'https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-red.css'];
 
         $(document).ready(function () {
             // Check Compatibility
