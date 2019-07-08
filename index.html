@@ -1,0 +1,603 @@
+<!--<link href="scripts/jquery.timepicker.css" rel="stylesheet" />-->
+    <link href="https://cdn.rawgit.com/wolicer/VivaVespanola/master/scripts/jquery.timepicker.css" rel="stylesheet" />
+    <link class="ged-theme-link" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.min.css" rel="stylesheet" />
+    <!--<link href="styles/index-main.css" rel="stylesheet" />-->
+    <link href="https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-main.css" rel="stylesheet" />
+    <link class="ged-color-link" href="https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-white.css" rel="stylesheet" />
+
+    <div id="ged-signature"><a href="#0">by Vilmharr</a></div>
+    <div id="ged-message" class="ui-widget"></div>
+    <div class="ged-body">
+        <!--Title Menu-->
+        <div class="ged-title">
+            <div class="ged-title-menu">
+                <div class="ged-title-menu-item">
+                    <a id="ged-title-menu-item-link-raider" class="ged-title-menu-item-link" href="#1">Raider</a>
+                </div>
+                <div class="ged-title-menu-item">
+                    <a id="ged-title-menu-item-link-collector" class="ged-title-menu-item-link" href="#2">Collector</a>
+                </div>
+                <div class="ged-title-menu-item">
+                    <a id="ged-title-menu-item-link-trader" class="ged-title-menu-item-link" href="#3">Trader</a>
+                </div>
+                <div class="ged-title-menu-item">
+                    <a id="ged-title-menu-item-link-surveyor" class="ged-title-menu-item-link" href="#4">Surveyor</a>
+                </div>
+                <div class="ged-title-menu-item">
+                    <a id="ged-title-menu-item-link-reminder" class="ged-title-menu-item-link" href="#5">Reminder</a>
+                </div>
+                <div class="ged-title-menu-item">
+                    <a id="ged-title-menu-item-link-memoir" class="ged-title-menu-item-link" href="#6">Memoir</a>
+                </div>
+            </div>
+        </div>
+        <div class="ged-content">
+            <!--General Content-->
+            <div class="ged-content-general">
+                Click one of the links above to start.
+            </div>
+            <!--Raider Content-->
+            <div class="ged-content-raider" style="display:none;">
+                <div class="ged-content-raider-body">
+                    <div class="ged-content-raider-body-progressbar"><div class="ged-content-raider-body-progressbar-label">0%</div></div>
+                    <div class="ged-content-raider-body-title">Raid List</div>
+                    <div class="ged-content-raider-body-control">
+                        <button id="ged-iconbutton-refreshRaid" class="ged-iconbutton" title="Refresh">Refresh</button>
+                        <button id="ged-iconbutton-addRaid" class="ged-iconbutton" title="Add Raid &frasl; Event">Add Raid / Event</button>
+                        <button id="ged-iconbutton-resetRaid" class="ged-iconbutton ged-content-developer-control" title="Reset">Reset</button>
+                    </div>
+                    <table id="ged-content-raider-body-table">
+                        <thead>
+                            <tr class="ged-table-head">
+                                <th style="max-width:350px; min-width:350px; text-align:left;">&nbsp;&nbsp;Raid / Event</th>
+                                <th style="min-width:42px; width:42px;">Count</th>
+                                <th style="min-width:72px; width:72px;">Status</th>
+                                <th style="min-width:230px; width:230px;"></th>
+                                <th style="min-width:138px; width:138px;"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <!--Add / Edit Raid Dialog-->
+                <div id="ged-content-raider-body-dialog-addEditRaid" title="Add Raid &frasl; Event">
+                    <label for="dialog-addEditRaid-name">Name:</label>
+                    <input id="dialog-addEditRaid-name" type="text" maxlength="120" />
+                    <br /><br />
+                    <label for="dialog-addEditRaid-repeatCount">Maximum Repetition:</label>
+                    <input id="dialog-addEditRaid-repeatCount" type="text" maxlength="3" value="1" title="Maximum number of times you can do the raid. (Put -1 if raid has no limit.)" />
+                    <label for="dialog-addEditRaid-repeatTarget">Target Repetition:</label>
+                    <input id="dialog-addEditRaid-repeatTarget" type="text" maxlength="3" value="1" title="Your target number of times to do this raid. (Put -1 if you want to fully ignore this raid.)" />
+                    <br /><br />
+                    <input type="checkbox" id="dialog-addEditRaid-daily" /><label for="dialog-addEditRaid-daily" title="The raid can be done daily.">Daily</label>
+                    <div id="dialog-addEditRaid-week">
+                        <input type="checkbox" id="dialog-addEditRaid-week-sun" class="dialog-addEditRaid-week" /><label for="dialog-addEditRaid-week-sun" title="Sunday" class="dialog-addEditRaid-weekLabel">Sun</label>
+                        <input type="checkbox" id="dialog-addEditRaid-week-mon" class="dialog-addEditRaid-week" /><label for="dialog-addEditRaid-week-mon" title="Monday" class="dialog-addEditRaid-weekLabel">Mon</label>
+                        <input type="checkbox" id="dialog-addEditRaid-week-tue" class="dialog-addEditRaid-week" /><label for="dialog-addEditRaid-week-tue" title="Tuesday" class="dialog-addEditRaid-weekLabel">Tue</label>
+                        <input type="checkbox" id="dialog-addEditRaid-week-wed" class="dialog-addEditRaid-week" /><label for="dialog-addEditRaid-week-wed" title="Wednesday" class="dialog-addEditRaid-weekLabel">Wed</label>
+                        <input type="checkbox" id="dialog-addEditRaid-week-thu" class="dialog-addEditRaid-week" /><label for="dialog-addEditRaid-week-thu" title="Thursday" class="dialog-addEditRaid-weekLabel">Thu</label>
+                        <input type="checkbox" id="dialog-addEditRaid-week-fri" class="dialog-addEditRaid-week" /><label for="dialog-addEditRaid-week-fri" title="Friday" class="dialog-addEditRaid-weekLabel">Fri</label>
+                        <input type="checkbox" id="dialog-addEditRaid-week-sat" class="dialog-addEditRaid-week" /><label for="dialog-addEditRaid-week-sat" title="Saturday" class="dialog-addEditRaid-weekLabel">Sat</label>
+                    </div>
+                    <br /><br />
+                    <input type="checkbox" id="dialog-addEditRaid-time" /><label for="dialog-addEditRaid-time" title="The raid can only be done at specific time.&#013;&#010;(24 Hour Clock Format)">Timeslot</label>
+                    <input id="dialog-addEditRaid-timeStart" class="dialog-addEditRaid-time" type="text" />&nbsp;-&nbsp;<input id="dialog-addEditRaid-timeEnd" class="dialog-addEditRaid-time" type="text" />
+                    <br /><br />
+                    <input type="checkbox" id="dialog-addEditRaid-cooldown" /><label for="dialog-addEditRaid-cooldown" title="The raid can only be repeated after cooldown.">Cooldown</label>
+                    <label for="dialog-addEditRaid-cooldownDuration">Day(s):</label>
+                    <input id="dialog-addEditRaid-cooldownDuration" type="text" maxlength="2" title="Number of days for the cooldown to finish." />
+                    <br /><br />
+                    <input type="checkbox" id="dialog-addEditRaid-duration" /><label for="dialog-addEditRaid-duration" title="The raid can only be done for a specific duration. (Usually for events.)">Duration</label>
+                    <input id="dialog-addEditRaid-durationStart" class="dialog-addEditRaid-duration" type="text" maxlength="10" />&nbsp;-&nbsp;<input id="dialog-addEditRaid-durationEnd" class="dialog-addEditRaid-duration" type="text" maxlength="10" />
+                    <br /><br />
+                    <div class="dialog-addEditRaid-noteLabel">
+                        <label for="dialog-addEditRaid-note">Additional Notes:</label>
+                    </div>
+                    <textarea id="dialog-addEditRaid-note" maxlength="500"></textarea>
+                </div>
+                <!--Information Dialog-->
+                <div class="ged-content-raider-body-dialog-info" title="Info">
+                    <div class="ged-content-raider-body-dialog-infoContent"></div>
+                </div>
+                <!--Reset Raider Confirmation Dialog-->
+                <div class="ged-content-raider-body-dialog-resetConfirmation" title="Reset?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All user added raid(s)/event(s) will be removed permanently and replaced by default data. Are you sure?</p>
+                </div>
+                <!--Delete Confirmation Dialog-->
+                <div class="ged-content-raider-body-dialog-deleteConfirmation" title="Delete?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>The raid / event will be deleted permanently. Are you sure?</p>
+                </div>
+            </div>
+            <!--Collector Content-->
+            <div class="ged-content-collector" style="display:none;">
+                <div class="ged-content-collector-body">
+                    <div class="ged-content-collector-body-progressbar"><div class="ged-content-collector-body-progressbar-label">0%</div></div>
+                    <div class="ged-content-collector-body-title">Character List</div>
+                    <div class="ged-content-collector-body-control">
+                        <button id="ged-iconbutton-refreshChar" class="ged-iconbutton" title="Refresh">Sort</button>
+                        <button id="ged-iconbutton-addCharacter" class="ged-iconbutton" title="Add Character">Add Character</button>
+                        <button id="ged-iconbutton-resetCollector" class="ged-iconbutton ged-content-developer-control" title="Reset">Reset</button>
+                    </div>
+                    <table id="ged-content-collector-body-table">
+                        <thead>
+                            <tr class="ged-table-head">
+                                <th style="min-width:64px; width:64px;"></th>
+                                <th style="min-width:160px; text-align:left;">Character</th>
+                                <th style="min-width:120px; width:120px;">Rank</th>
+                                <th style="min-width:296px; width:296px;"></th>
+                                <th style="min-width:90px; width:90px;"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <!--Add / Edit Char Dialog-->
+                <div id="ged-content-collector-body-dialog-addEditChar" title="Add Character">
+                    <label for="dialog-addEditChar-name" class="dialog-addEditChar-label">Name:</label>
+                    <input id="dialog-addEditChar-name" type="text" maxlength="300" />
+                    <br /><br />
+                    <div id="dialog-addEditChar-rank">
+                        <input type="radio" name="dialog-addEditChar-rank" id="dialog-addEditChar-rank-pio" class="dialog-addEditChar-rank" value="Pioneer" /><label for="dialog-addEditChar-rank-pio" class="dialog-addEditChar-rankLabel">Pioneer</label>
+                        <input type="radio" name="dialog-addEditChar-rank" id="dialog-addEditChar-rank-que" class="dialog-addEditChar-rank" value="Quest" /><label for="dialog-addEditChar-rank-que" class="dialog-addEditChar-rankLabel">Quest</label>
+                        <input type="radio" name="dialog-addEditChar-rank" id="dialog-addEditChar-rank-pre" class="dialog-addEditChar-rank" value="Premium" /><label for="dialog-addEditChar-rank-pre" class="dialog-addEditChar-rankLabel">Premium</label>
+                        <input type="radio" name="dialog-addEditChar-rank" id="dialog-addEditChar-rank-pro" class="dialog-addEditChar-rank" value="Promotional" /><label for="dialog-addEditChar-rank-pro" class="dialog-addEditChar-rankLabel">Promotional</label>
+                    </div>
+                    <br />
+                    <label for="dialog-addEditChar-icon" class="dialog-addEditChar-label">Icon:</label>
+                    <input id="dialog-addEditChar-icon" type="text" />
+                    <br /><br />
+                    <div class="dialog-addEditChar-noteLabel">
+                        <label for="dialog-addEditChar-note">Additional Notes:</label>
+                    </div>
+                    <textarea id="dialog-addEditChar-note" maxlength="500"></textarea>
+                </div>
+                <!--Information Dialog-->
+                <div class="ged-content-collector-body-dialog-info" title="Info">
+                    <div class="ged-content-collector-body-dialog-infoContent"></div>
+                </div>
+                <!--Reset Collector Confirmation Dialog-->
+                <div class="ged-content-collector-body-dialog-resetConfirmation" title="Reset?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All user added character(s) will be removed and default data will be reset. Are you sure?</p>
+                </div>
+                <!--Delete Confirmation Dialog-->
+                <div class="ged-content-collector-body-dialog-deleteConfirmation" title="Delete?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>The character will be deleted permanently. Are you sure?</p>
+                </div>
+            </div>
+            <!--Trader Content-->
+            <div class="ged-content-trader" style="display:none;">
+                <div class="ged-content-trader-body">
+                    <div class="ged-content-trader-body-title">Price Track</div>
+                    <div class="ged-content-trader-body-control-item">
+                        <button id="ged-iconbutton-refreshItem" class="ged-iconbutton" title="Refresh">Refresh</button>
+                        <button id="ged-iconbutton-addItem" class="ged-iconbutton" title="Add Item">Add Item</button>
+                        <button id="ged-iconbutton-resetTraderItem" class="ged-iconbutton ged-content-developer-control" title="Reset">Reset</button>
+                    </div>
+                    <table id="ged-content-trader-body-table-item">
+                        <thead>
+                            <tr class="ged-table-head">
+                                <th style="min-width:160px; text-align:left;">Item</th>
+                                <th style="min-width:120px; width:120px;">Record</th>
+                                <th style="min-width:120px; width:120px;">Type</th>
+                                <th style="min-width:148px; width:148px;">Price</th>
+                                <th style="min-width:90px; width:90px;"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <hr />
+                    <div class="ged-content-trader-body-title">Shopping List</div>
+                    <div class="ged-content-trader-body-control-shop">
+                        <button id="ged-iconbutton-refreshShop" class="ged-iconbutton ged-content-developer-control" title="Refresh">Refresh</button>
+                        <button id="ged-iconbutton-addShop" class="ged-iconbutton" title="Add Item">Add Item</button>
+                        <button id="ged-iconbutton-resetTraderShop" class="ged-iconbutton ged-content-developer-control" title="Reset">Reset</button>
+                    </div>
+                    <table id="ged-content-trader-body-table-shop">
+                        <thead>
+                            <tr class="ged-table-head">
+                                <th style="min-width:160px; text-align:left;">Item</th>
+                                <th style="min-width:240px; width:240px;">Total Price</th>
+                                <th style="min-width:280px; width:280px;"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <hr />
+                    <div class="ged-content-trader-body-title">Item Project</div>
+                    <div class="ged-content-trader-body-control-proj">
+                        <button id="ged-iconbutton-refreshProj" class="ged-iconbutton ged-content-developer-control" title="Refresh">Refresh</button>
+                        <button id="ged-iconbutton-addProj" class="ged-iconbutton" title="Add Item">Add Project</button>
+                        <button id="ged-iconbutton-resetTraderProj" class="ged-iconbutton ged-content-developer-control" title="Reset">Reset</button>
+                    </div>
+                    <table id="ged-content-trader-body-table-proj">
+                        <thead>
+                            <tr class="ged-table-head">
+                                <th style="min-width:160px; text-align:left;">Project</th>
+                                <th style="min-width:120px; width:120px;">Type</th>
+                                <th style="min-width:280px; width:280px;"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <!--Add / Edit Item Dialog-->
+                <div id="ged-content-trader-body-dialog-addEditItem" title="Add Item">
+                    <label for="dialog-addEditItem-name" class="dialog-addEditItem-label">Name:</label>
+                    <input id="dialog-addEditItem-name" type="text" maxlength="300" />
+                    <br /><br />
+                    <label for="dialog-addEditItem-price" class="dialog-addEditItem-label">Price:</label>
+                    <input id="dialog-addEditItem-price" type="text" />
+                    <span id="dialog-addEditItem-price-display">0</span><span id="dialog-addEditItem-price-display-currency"> Vis</span>
+                    <br /><br />
+                    <div id="dialog-addEditItem-currency">
+                        <input type="radio" name="dialog-addEditItem-currency" id="dialog-addEditItem-currency-vis" class="dialog-addEditItem-currency" value="Vis" /><label for="dialog-addEditItem-currency-vis" class="dialog-addEditItem-currencyLabel">Vis</label>
+                        <input type="radio" name="dialog-addEditItem-currency" id="dialog-addEditItem-currency-fes" class="dialog-addEditItem-currency" value="Feso" /><label for="dialog-addEditItem-currency-fes" class="dialog-addEditItem-currencyLabel">Feso</label>
+                    </div>
+                    <br />
+                    <div id="dialog-addEditItem-type">
+                        <input type="radio" name="dialog-addEditItem-type" id="dialog-addEditItem-type-equ" class="dialog-addEditItem-type" value="Equip" /><label for="dialog-addEditItem-type-equ" class="dialog-addEditItem-typeLabel">Equip</label>
+                        <input type="radio" name="dialog-addEditItem-type" id="dialog-addEditItem-type-exp" class="dialog-addEditItem-type" value="Expend" /><label for="dialog-addEditItem-type-exp" class="dialog-addEditItem-typeLabel">Expend</label>
+                        <input type="radio" name="dialog-addEditItem-type" id="dialog-addEditItem-type-mis" class="dialog-addEditItem-type" value="Misc" /><label for="dialog-addEditItem-type-mis" class="dialog-addEditItem-typeLabel">Misc</label>
+                        <input type="radio" name="dialog-addEditItem-type" id="dialog-addEditItem-type-cos" class="dialog-addEditItem-type" value="Costume" /><label for="dialog-addEditItem-type-cos" class="dialog-addEditItem-typeLabel">Costume</label>
+                    </div>
+                    <br />
+                    <div class="dialog-addEditItem-noteLabel">
+                        <label for="dialog-addEditItem-note">Additional Notes:</label>
+                    </div>
+                    <textarea id="dialog-addEditItem-note" maxlength="500"></textarea>
+                </div>                
+                <!--Add / Edit Shop Dialog-->
+                <div id="ged-content-trader-body-dialog-addEditShop" title="Add Item">
+                    <label for="dialog-addEditShop-name" class="dialog-addEditShop-label">Name:</label>
+                    <select id="dialog-addEditShop-name"></select>
+                    <br /><br />
+                    <label for="dialog-addEditShop-quantity" class="dialog-addEditShop-label">Quantity:</label>
+                    <input id="dialog-addEditShop-quantity" type="text" maxlength="8" value="1" />
+                    <br /><br />
+                    <div class="dialog-addEditShop-noteLabel">
+                        <label for="dialog-addEditShop-note">Additional Notes:</label>
+                    </div>
+                    <textarea id="dialog-addEditShop-note" maxlength="500"></textarea>
+                </div>
+                <!--Add / Edit Proj Dialog-->
+                <div id="ged-content-trader-body-dialog-addEditProj" title="Add Project">
+                    <label for="dialog-addEditProj-name" class="dialog-addEditProj-label">Name:</label>
+                    <input id="dialog-addEditProj-name" type="text" maxlength="300" />
+                    <br /><br />
+                    <label for="dialog-addEditProj-color" class="dialog-addEditProj-label">Color:</label>
+                    <input id="dialog-addEditProj-color" type="text" maxlength="30" value="black" />
+                    <br /><br />
+                    <div id="dialog-addEditProj-type">
+                        <input type="radio" name="dialog-addEditProj-type" id="dialog-addEditProj-type-equ" class="dialog-addEditProj-type" value="Equip" /><label for="dialog-addEditProj-type-equ" class="dialog-addEditProj-typeLabel">Equip</label>
+                        <input type="radio" name="dialog-addEditProj-type" id="dialog-addEditProj-type-exp" class="dialog-addEditProj-type" value="Expend" /><label for="dialog-addEditProj-type-exp" class="dialog-addEditProj-typeLabel">Expend</label>
+                        <input type="radio" name="dialog-addEditProj-type" id="dialog-addEditProj-type-mis" class="dialog-addEditProj-type" value="Misc" /><label for="dialog-addEditProj-type-mis" class="dialog-addEditProj-typeLabel">Misc</label>
+                        <input type="radio" name="dialog-addEditProj-type" id="dialog-addEditProj-type-cos" class="dialog-addEditProj-type" value="Costume" /><label for="dialog-addEditProj-type-cos" class="dialog-addEditProj-typeLabel">Costume</label>
+                    </div>
+                    <br />
+                    <div class="dialog-addEditProj-noteLabel">
+                        <label for="dialog-addEditProj-note">Additional Notes:</label>
+                    </div>
+                    <textarea id="dialog-addEditProj-note" maxlength="500"></textarea>
+                </div>
+                <!--Information Item Dialog-->
+                <div class="ged-content-trader-body-dialog-info" title="Info">
+                    <div class="ged-content-trader-body-dialog-infoContent"></div>
+                </div>
+                <!--Reset Trader Item Confirmation Dialog-->
+                <div class="ged-content-trader-body-dialog-resetConfirmationItem" title="Reset?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All user added item(s) will be removed and default data will be reset. Are you sure?</p>
+                </div>                
+                <!--Reset Trader Shop Confirmation Dialog-->
+                <div class="ged-content-trader-body-dialog-resetConfirmationShop" title="Reset?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All user added item(s) will be removed and default data will be reset. Are you sure?</p>
+                </div>
+                <!--Reset Trader Proj Confirmation Dialog-->
+                <div class="ged-content-trader-body-dialog-resetConfirmationProj" title="Reset?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All user added project(s) will be removed and default data will be reset. Are you sure?</p>
+                </div>
+                <!--Delete Item Confirmation Dialog-->
+                <div class="ged-content-trader-body-dialog-deleteConfirmationItem" title="Delete?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>The item will be deleted permanently. Are you sure?</p>
+                </div>                
+                <!--Delete Shop Confirmation Dialog-->
+                <div class="ged-content-trader-body-dialog-deleteConfirmationShop" title="Delete?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>The item will be deleted permanently. Are you sure?</p>
+                </div>
+                <!--Delete Proj Confirmation Dialog-->
+                <div class="ged-content-trader-body-dialog-deleteConfirmationProj" title="Delete?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>The item will be deleted permanently. Are you sure?</p>
+                </div>
+            </div>
+            <!--Surveyor Content-->
+            <div class="ged-content-surveyor" style="display:none;">
+                <div class="ged-content-surveyor-body">
+                    <div class="ged-content-surveyor-body-progressbar"><div class="ged-content-surveyor-body-progressbar-label">0%</div></div>
+                    <div class="ged-content-surveyor-body-title">Family Level 0</div>
+                    <div class="ged-content-surveyor-body-control">
+                        <button id="ged-iconbutton-refreshMember" class="ged-iconbutton" title="Refresh">Refresh</button>
+                        <button id="ged-iconbutton-addMember" class="ged-iconbutton" title="Add Member">Add Member</button>
+                        <button id="ged-iconbutton-resetMember" class="ged-iconbutton ged-content-developer-control" title="Reset">Reset</button>
+                    </div>
+                    <div id="ged-content-surveyor-holder"></div>
+                </div>
+                <!--Add / Edit Memb Dialog-->
+                <div id="ged-content-surveyor-body-dialog-addEditMemb" title="Add Member">
+                    <label for="dialog-addEditMemb-type" class="dialog-addEditMemb-label">Character:</label>
+                    <select id="dialog-addEditMemb-type"></select>
+                    <br /><br />
+                    <label for="dialog-addEditMemb-level" class="dialog-addEditMemb-label">Level:</label>
+                    <input id="dialog-addEditMemb-level" type="text" />
+                    <br /><br />
+                    <div class="dialog-addEditMemb-noteLabel">
+                        <label for="dialog-addEditMemb-note">Additional Notes:</label>
+                    </div>
+                    <textarea id="dialog-addEditMemb-note" maxlength="500"></textarea>
+                </div>
+                <!--Information Dialog-->
+                <div class="ged-content-surveyor-body-dialog-info" title="Info">
+                    <div class="ged-content-surveyor-body-dialog-infoContent"></div>
+                </div>
+                <!--Reset Collector Confirmation Dialog-->
+                <div class="ged-content-surveyor-body-dialog-resetConfirmation" title="Reset?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All user added member(s) will be removed and default data will be reset. Are you sure?</p>
+                </div>
+                <!--Delete Confirmation Dialog-->
+                <div class="ged-content-surveyor-body-dialog-deleteConfirmation" title="Delete?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>The member will be deleted permanently. Are you sure?</p>
+                </div>
+            </div>
+            <!--Reminder Content-->
+            <div class="ged-content-reminder" style="display:none;">
+                <div class="ged-content-reminder-body">
+                    <div class="ged-content-reminder-body-title">Alarm List</div>
+                    <div class="ged-content-reminder-body-control">
+                        <button id="ged-iconbutton-refreshAlarm" class="ged-iconbutton" title="Snooze">Snooze</button>
+                        <button id="ged-iconbutton-addAlarm" class="ged-iconbutton" title="Add Alarm">Add Alarm</button>
+                        <button id="ged-iconbutton-resetReminder" class="ged-iconbutton ged-content-developer-control" title="Reset">Reset</button>
+                    </div>
+                    <table id="ged-content-reminder-body-table">
+                        <thead>
+                            <tr class="ged-table-head">
+                                <th style="min-width:160px; text-align:left;">&nbsp;&nbsp;Alarm</th>
+                                <th style="min-width:450px; width:450px;">Set Time</th>
+                                <th style="min-width:140px; width:140px;">Countdown</th>
+                                <th style="min-width:90px; width:90px;"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <audio id="ged-content-reminder-body-alarm" src="https://cdn.rawgit.com/wolicer/VivaVespanola/master/sound/alarm.mp3" />
+                </div>
+                <!--Add / Edit Alrm Dialog-->
+                <div id="ged-content-reminder-body-dialog-addEditAlrm" title="Add Raid &frasl; Event">
+                    <label for="dialog-addEditAlrm-name">Name:</label>
+                    <input id="dialog-addEditAlrm-name" type="text" maxlength="120" />
+                    <br /><br />
+                    <input type="checkbox" id="dialog-addEditAlrm-switch" /><label for="dialog-addEditAlrm-switch" title="The alarm can be turned on/off.">Enabled</label>
+                    <br /><br />
+                    <input type="checkbox" id="dialog-addEditAlrm-daily" /><label for="dialog-addEditAlrm-daily" title="The alarm can be triggered daily.">Daily</label>
+                    <div id="dialog-addEditAlrm-week">
+                        <input type="checkbox" id="dialog-addEditAlrm-week-sun" class="dialog-addEditAlrm-week" /><label for="dialog-addEditAlrm-week-sun" title="Sunday" class="dialog-addEditAlrm-weekLabel">Sun</label>
+                        <input type="checkbox" id="dialog-addEditAlrm-week-mon" class="dialog-addEditAlrm-week" /><label for="dialog-addEditAlrm-week-mon" title="Monday" class="dialog-addEditAlrm-weekLabel">Mon</label>
+                        <input type="checkbox" id="dialog-addEditAlrm-week-tue" class="dialog-addEditAlrm-week" /><label for="dialog-addEditAlrm-week-tue" title="Tuesday" class="dialog-addEditAlrm-weekLabel">Tue</label>
+                        <input type="checkbox" id="dialog-addEditAlrm-week-wed" class="dialog-addEditAlrm-week" /><label for="dialog-addEditAlrm-week-wed" title="Wednesday" class="dialog-addEditAlrm-weekLabel">Wed</label>
+                        <input type="checkbox" id="dialog-addEditAlrm-week-thu" class="dialog-addEditAlrm-week" /><label for="dialog-addEditAlrm-week-thu" title="Thursday" class="dialog-addEditAlrm-weekLabel">Thu</label>
+                        <input type="checkbox" id="dialog-addEditAlrm-week-fri" class="dialog-addEditAlrm-week" /><label for="dialog-addEditAlrm-week-fri" title="Friday" class="dialog-addEditAlrm-weekLabel">Fri</label>
+                        <input type="checkbox" id="dialog-addEditAlrm-week-sat" class="dialog-addEditAlrm-week" /><label for="dialog-addEditAlrm-week-sat" title="Saturday" class="dialog-addEditAlrm-weekLabel">Sat</label>
+                    </div>
+                    <br /><br />
+                    <label for="dialog-addEditAlrm-time" title="24 Hour Clock Format">Timeslot</label>
+                    <input id="dialog-addEditAlrm-timeStart" class="dialog-addEditAlrm-time" type="text" />&nbsp;-&nbsp;<input id="dialog-addEditAlrm-timeEnd" class="dialog-addEditAlrm-time" type="text" />
+                    <br /><br />
+                    <div class="dialog-addEditAlrm-noteLabel">
+                        <label for="dialog-addEditAlrm-note">Additional Notes:</label>
+                    </div>
+                    <textarea id="dialog-addEditAlrm-note" maxlength="500"></textarea>
+                </div>
+                <!--Information Dialog-->
+                <div class="ged-content-reminder-body-dialog-info" title="Info">
+                    <div class="ged-content-reminder-body-dialog-infoContent"></div>
+                </div>
+                <!--Reset Reminder Confirmation Dialog-->
+                <div class="ged-content-reminder-body-dialog-resetConfirmation" title="Reset?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>All user added alarm(s) will be removed and default data will be reset. Are you sure?</p>
+                </div>
+                <!--Delete Confirmation Dialog-->
+                <div class="ged-content-reminder-body-dialog-deleteConfirmation" title="Delete?">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>The alarm will be deleted permanently. Are you sure?</p>
+                </div>
+            </div>
+            <!--Memoir Content-->
+            <div class="ged-content-memoir" style="display:none;">
+                <div class="ged-content-memoir-body">
+                    <div class="ged-content-memoir-body-title">Memo</div>
+                    <div class="ged-content-memoir-body-control">
+                        <button id="ged-iconbutton-refreshMemo" class="ged-iconbutton" title="Fit Content">Save Content</button>
+                    </div>
+                    <textarea id="ged-content-memoir-text"></textarea>
+                </div>
+            </div>
+            <!--Creator Content-->
+            <div class="ged-content-creator" style="display:none;">
+                <div class="ged-content-creator-body">
+                    <h3>Introduction:</h3>
+                    <p>Pioneer's Daily Memo is a page designed to help Granado Espada players in keeping track of daily online activities.</p>
+                    <hr />
+                    <h3>Notes:</h3>
+                    <p>
+                        <ul>
+                            <li>This page uses browser local storage to store data. Consider using a different browser if your browser doesn't support local storage. This also means data is stored locally and will not be transferred across the web or across browsers.</li>
+                            <li>This page mainly uses client side programming which uses a lot of scripts. It loads slower but you never have to reload/refresh the page once it is loaded. Use the Refresh/Sort button instead to update the record's sort and order.</li>
+                            <li>Use the Refresh/Sort button to quickly update the corresponding tables which also sorts it by predetermined order. Adding, editing or deleting any record also does the refreshes and sort the records.</li>
+                            <li>Raider page is designed to record daily raids. Use the Refresh button after the day has passed to reset the counters.</li>
+                            <li>Collector page is designed to record you character collections. New release character's portrait image links will be provided in future posts.</li>
+                            <li>Trader can be used to keep track of item prices and list of items you're planning to buy. If you are having trouble seeing the prices due to color, consider changing the color settings below.</li>
+                            <li>Surveyor can be used to calculate family level.</li>
+                            <li>Reminder is used as an alarm for important game events with time slots.</li>
+                            <li>The page must remain open in order for the alarm to work.</li>
+                            <li>Memoir can be used as a quick way to save texts whenever needed.</li>
+                        </ul>
+                    </p>
+                    <hr />
+                    <h3>About:</h3>
+                    <br />
+                    <table id="ged-content-creator-body-table-version">
+                        <thead>
+                            <tr class="ged-table-head">
+                                <th style="width:80px; text-align:left;">Type</th>
+                                <th style="width:100px; text-align:left;">Version</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HTML</td>
+                                <td><span>1.9</span></td>
+                            </tr>
+                            <tr>
+                                <td>CSS</td>
+                                <td><span id="ged-style-version"></span></td>
+                            </tr>
+                            <tr>
+                                <td>JS</td>
+                                <td><span id="ged-script-version"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <h3>Theme Settings:</h3>
+                    <p>You can change how the webpage looks below:</p>
+                    <label for="ged-content-creator-color-switcher">Color:</label>
+                    <select id="ged-content-creator-color-switcher">
+                        <option value="white">White</option>
+                        <option value="gray">Gray</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="red">Red</option>
+                    </select>
+                    <br />
+                    <br />
+                    <label for="ged-content-creator-theme-switcher">Interface:</label>
+                    <select id="ged-content-creator-theme-switcher">
+                        <option value="black-tie">Black Tie</option>
+                        <option value="blitzer">Blitzer</option>
+                        <option value="cupertino">Cupertino</option>
+                        <option value="dark-hive">Dark Hive</option>
+                        <option value="dot-luv">Dot Luv</option>
+                        <option value="eggplant">Eggplant</option>
+                        <option value="excite-bike">Excite Bike</option>
+                        <option value="flick">Flick</option>
+                        <option value="hot-sneaks">Hot sneaks</option>
+                        <option value="humanity">Humanity</option>
+                        <option value="le-frog">Le Frog</option>
+                        <option value="mint-choc">Mint Choc</option>
+                        <option value="overcast">Overcast</option>
+                        <option value="pepper-grinder">Pepper Grinder</option>
+                        <option value="redmond">Redmond</option>
+                        <option value="smoothness" selected="selected">Smoothness</option>
+                        <option value="south-street">South Street</option>
+                        <option value="start">Start</option>
+                        <option value="sunny">Sunny</option>
+                        <option value="swanky-purse">Swanky Purse</option>
+                        <option value="trontastic">Trontastic</option>
+                        <option value="ui-darkness">UI Darkness</option>
+                        <option value="ui-lightness">UI Lightness</option>
+                        <option value="vader">Vader</option>
+                    </select>
+                    <hr />
+                    <h3>Import / Export Data:</h3>
+                    <p>You can import or export data below. Importing wrong data will result to data loss:</p>
+                    <table id="ged-content-creator-body-table-file">
+                        <thead>
+                            <tr class="ged-table-head">
+                                <th style="width:120px; text-align:left;">Data</th>
+                                <th style="width:200px; text-align:left;">File</th>
+                                <th style="width:80px; text-align:center;">Import</th>
+                                <th style="width:80px; text-align:center;">Export</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Raid</td>
+                                <td><input type="file" id="ged-content-creator-import-raid-file"></td>
+                                <td><input type="button" id="ged-content-creator-import-raid" value="Import" /></td>
+                                <td><input type="button" id="ged-content-creator-export-raid" value="Export" /></td>
+                            </tr>
+                            <tr>
+                                <td>Character</td>
+                                <td><input type="file" id="ged-content-creator-import-char-file"></td>
+                                <td><input type="button" id="ged-content-creator-import-char" value="Import" /></td>
+                                <td><input type="button" id="ged-content-creator-export-char" value="Export" /></td>
+                            </tr>
+                            <tr>
+                                <td>Price Track</td>
+                                <td><input type="file" id="ged-content-creator-import-item-file"></td>
+                                <td><input type="button" id="ged-content-creator-import-item" value="Import" /></td>
+                                <td><input type="button" id="ged-content-creator-export-item" value="Export" /></td>
+                            </tr>
+                            <tr>
+                                <td>Shopping List</td>
+                                <td><input type="file" id="ged-content-creator-import-shop-file"></td>
+                                <td><input type="button" id="ged-content-creator-import-shop" value="Import" /></td>
+                                <td><input type="button" id="ged-content-creator-export-shop" value="Export" /></td>
+                            </tr>
+                            <tr>
+                                <td>Item Project</td>
+                                <td><input type="file" id="ged-content-creator-import-proj-file"></td>
+                                <td><input type="button" id="ged-content-creator-import-proj" value="Import" /></td>
+                                <td><input type="button" id="ged-content-creator-export-proj" value="Export" /></td>
+                            </tr>
+                            <tr>
+                                <td>Family</td>
+                                <td><input type="file" id="ged-content-creator-import-memb-file"></td>
+                                <td><input type="button" id="ged-content-creator-import-memb" value="Import" /></td>
+                                <td><input type="button" id="ged-content-creator-export-memb" value="Export" /></td>
+                            </tr>
+                            <tr>
+                                <td>Alarm</td>
+                                <td><input type="file" id="ged-content-creator-import-alrm-file"></td>
+                                <td><input type="button" id="ged-content-creator-import-alrm" value="Import" /></td>
+                                <td><input type="button" id="ged-content-creator-export-alrm" value="Export" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <h3>Advance Tools:</h3>
+                    <p>Use/modify below options at your own risk. Any damage cannot be undone:</p>
+                    <input type="checkbox" id="ged-content-creator-confirm-leave" />
+                    <label for="ged-content-creator-confirm-leave">Confirm before leaving page</label>
+                    <br />
+                    <br />
+                    <input type="checkbox" id="ged-content-creator-auto-reload" />
+                    <label for="ged-content-creator-auto-reload">Auto update tables</label>
+                    <br />
+                    <br />
+                    <input type="checkbox" id="ged-content-creator-reseed-empty" />
+                    <label for="ged-content-creator-reseed-empty">Reseed records if empty</label>
+                    <br />
+                    <br />
+                    <input type="checkbox" id="ged-content-creator-develop-view" />
+                    <label for="ged-content-creator-develop-view">Display all controls</label>
+                    <br />
+                    <br />
+                    <label for="ged-content-creator-mission-vision">Mission Visibility:</label>
+                    <select id="ged-content-creator-mission-vision">
+                        <option value="1">1 - Ongoing</option>
+                        <option value="2">2 - Pending</option>
+                        <option value="3">3 - Exceed</option>
+                        <option value="4">4 - Extraneous</option>
+                        <option value="5">5 - Done</option>
+                        <option value="6">6 - Feasible</option>
+                        <option value="7">7 - Cooldown</option>
+                        <option value="8">8 - Ignored</option>
+                        <option value="9">9 - Expired</option>
+                    </select>
+                    <br />
+                    <br />
+                    <input type="button" id="ged-content-creator-reset-setting" class="ged-content-developer-control" value="Reset All Settings" />
+                    <br />
+                    <br />
+                    <input type="button" id="ged-content-creator-reseed-all" class="ged-content-developer-control" value="Reseed Sample Records" />
+                    <br />
+                    <br />
+                    <input type="button" id="ged-content-creator-purge-all" class="ged-content-developer-control" value="Purge All Records" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.rawgit.com/wolicer/VivaVespanola/master/scripts/index-combine.js"></script>
+    <script src="https://cdn.rawgit.com/wolicer/VivaVespanola/master/scripts/index-main.js"></script>
+    <script src="https://cdn.rawgit.com/wolicer/VivaVespanola/master/scripts/index-seed.js"></script>
