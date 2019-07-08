@@ -27,11 +27,11 @@
         var scriptVersion = "1.9";
         var alarmAudio = document.getElementById('ged-content-reminder-body-alarm');
         //var gedColorLinks = [white,gray,blue,green,red]
-        var gedColorLinks = ['https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-white.css',
-                                'https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-gray.css',
-                                'https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-blue.css',
-                                'https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-green.css',
-                                'https://cdn.rawgit.com/wolicer/VivaVespanola/master/styles/index-red.css'];
+        var gedColorLinks = ['https://wolicer.github.io/VivaVespanola/master/styles/index-white.css',
+                                'https://wolicer.github.io/VivaVespanola/master/styles/index-gray.css',
+                                'https://wolicer.github.io/VivaVespanola/master/styles/index-blue.css',
+                                'https://wolicer.github.io/VivaVespanola/master/styles/index-green.css',
+                                'https://wolicer.github.io/VivaVespanola/master/styles/index-red.css'];
 
         $(document).ready(function () {
             // Check Compatibility
